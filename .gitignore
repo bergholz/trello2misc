@@ -1,0 +1,4 @@
+*.pyc
+__pycache__/
+/*.txt
+/trello2misc.ini
