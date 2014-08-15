@@ -4,5 +4,5 @@ action=$1
 shift
 
 [ "$action" = "trello" ] && {
-     python3 ${TODO_ACTIONS_DIR}/trello2todotxt.py
+     python3 ${TODO_ACTIONS_DIR}/trello2misc.py todotxt
 }

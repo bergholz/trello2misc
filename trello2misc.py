@@ -1,11 +1,10 @@
 #!/usr/bin/python3
 
-""" trello2todotxt.py
-Pulls your cards from Trello to your local todo.txt-file. 
-Broadly speaking, one card corresponds to one entry. 
-Boards correspond to contexts, lists to priorities, and
-labels to projects. See the README and trello2misc.ini
-files for more information.
+"""trello2misc.py
+Pulls your cards from Trello to your console or your local todo.txt-file.
+Broadly speaking, one card corresponds to one entry. Boards correspond to
+contexts, lists to priorities, and labels to projects. See the README.md and
+trello2misc.ini files for more information.
 
 Author: André Bergholz
 Version: 1.0
@@ -16,7 +15,7 @@ import trello, todotxt, utils
 
 __version__ = "1.0"
 __date__ = "2013/02/28"
-__updated__ = "2013/02/28"
+__updated__ = "2014/08/15"
 __author__ = "André Bergholz (bergholz@gmail.com)"
 __license__ = "GPL3"
 
@@ -142,10 +141,10 @@ def main(command):
         sortedCards = trello.sort_cards(cards, lists)
         print_oneliner(sortedCards, lists)
     elif command == "usage":
-        print("Usage: ./trello2todotxt.py [stdout|todotxt|usage]?")
+        print("Usage: ./trello2misc.py [stdout|todotxt|usage]?")
     else:
         print("Unsupported command: " + command)
-        print("Usage: ./trello2todotxt.py [stdout|todotxt|usage]?")
+        print("Usage: ./trello2misc.py [stdout|todotxt|usage]?")
 
 # The main program.
 if __name__ == '__main__':
