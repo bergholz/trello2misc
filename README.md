@@ -42,8 +42,7 @@ Installation
 
 Download the package into some directory. Copy the template.ini file to
 trello2misc.ini and adapt it to your needs. Copy the trello file to your
-todo.txt add-on directory. Create a soft link to the trello2misc.py file in the
-todo.txt add-on directory.
+todo.txt add-on directory. Set the TRELLO2MISC_DIR variable in the trello file.
 
 Example (assuming you have a ~/opt-directory for your local software):
 
@@ -55,8 +54,8 @@ Example (assuming you have a ~/opt-directory for your local software):
     # Adapt trello2misc.ini to your needs
     cd ~/opt/todo.txt/addons
     cp ~/opt/trello2misc/trello .
+    # Set TRELLO2MISC_DIR variable in trello file
     chmod 744 trello
-    ln -s ~/opt/trello2misc/trello2misc.py .
 	
 
 Configuration

@@ -1,8 +1,10 @@
 #!/bin/bash
 
+TRELLO2MISC_DIR="..."
+
 action=$1
 shift
 
 [ "$action" = "trello" ] && {
-     python3 ${TODO_ACTIONS_DIR}/trello2misc.py todotxt
+     python3 ${TRELLO2MISC_DIR}/trello2misc.py todotxt
 }
