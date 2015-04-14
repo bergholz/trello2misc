@@ -218,7 +218,7 @@ def sort_cards(cards, lists):
         else:
             otherCards.append(card)
     for listName in listOrder:
-        cardsByList[listName].sort(key=lambda x: x.pos, reverse=False)
+        cardsByList[listName].sort(key=lambda x: (x.due, x.pos), reverse=False)
     for listName in listOrder:
         sortedCards.extend(cardsByList[listName])
     sortedCards.extend(otherCards)
