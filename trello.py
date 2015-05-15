@@ -204,23 +204,30 @@ def sort_cards(cards, lists):
     for name in cLists.split(","):
         cList.append(name.replace("\"","").strip())
     listOrder = aList + bList + cList
-    cardsByList = {}
-    for listName in listOrder:
-        cardsByList[listName] = []
+    cardsByPriority = {}
+    cardsByPriority["A"] = []
+    cardsByPriority["B"] = []
+    cardsByPriority["C"] = []
     otherCards = []
     sortedCards = []
     for cardId in cards.keys():
         card = cards[cardId]
         listId = card.list
         listName = lists[listId]
-        if listName in listOrder:
-            cardsByList[listName].append(card)
+        if listName in aList:
+            cardsByPriority["A"].append(card)
+        elif listName in bList:
+            cardsByPriority["B"].append(card)
+        elif listName in cList:
+            cardsByPriority["C"].append(card)
         else:
             otherCards.append(card)
-    for listName in listOrder:
-        cardsByList[listName].sort(key=lambda x: (x.due, x.pos), reverse=False)
-    for listName in listOrder:
-        sortedCards.extend(cardsByList[listName])
+    cardsByPriority["A"].sort(key=lambda x: (x.due, x.pos), reverse=False)
+    cardsByPriority["B"].sort(key=lambda x: (x.due, x.pos), reverse=False)
+    cardsByPriority["C"].sort(key=lambda x: (x.due, x.pos), reverse=False)
+    sortedCards.extend(cardsByPriority["A"])
+    sortedCards.extend(cardsByPriority["B"])
+    sortedCards.extend(cardsByPriority["C"])
     sortedCards.extend(otherCards)
     return sortedCards
 
