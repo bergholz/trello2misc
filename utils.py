@@ -18,7 +18,12 @@ def readconfig(inifile):
     config.read(realdirname(__file__) + os.sep + inifile)
     return config
 
+# Turns none into empty string, e.g. to enable sorting.
+def nonetoempty(string):
+    if not string:
+        return ""
+    return string
+
 # Turns string.strip() operation into a function.
 def strip(string):
     return string.strip()
-
