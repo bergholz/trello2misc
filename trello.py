@@ -222,9 +222,9 @@ def sort_cards(cards, lists):
             cardsByPriority["C"].append(card)
         else:
             otherCards.append(card)
-    cardsByPriority["A"].sort(key=lambda x: (x.due, x.pos), reverse=False)
-    cardsByPriority["B"].sort(key=lambda x: (x.due, x.pos), reverse=False)
-    cardsByPriority["C"].sort(key=lambda x: (x.due, x.pos), reverse=False)
+    cardsByPriority["A"].sort(key=lambda x: (x.due or str(datetime.MAXYEAR), x.pos), reverse=False)
+    cardsByPriority["B"].sort(key=lambda x: (x.due or str(datetime.MAXYEAR), x.pos), reverse=False)
+    cardsByPriority["C"].sort(key=lambda x: (x.due or str(datetime.MAXYEAR), x.pos), reverse=False)
     sortedCards.extend(cardsByPriority["A"])
     sortedCards.extend(cardsByPriority["B"])
     sortedCards.extend(cardsByPriority["C"])
