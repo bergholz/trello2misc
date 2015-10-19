@@ -101,11 +101,11 @@ Usage
 
 Standalone program:
 
-    ./trello2misc.py [stdout|todotxt|usage]?
+    ./trello2misc.py [stdout|todotxt|help]?
 
 or:
 
-    python3 ./trello2misc.py [stdout|todotxt|usage]?
+    python3 ./trello2misc.py [stdout|todotxt|help]?
 
 todo.txt add-on:
 
