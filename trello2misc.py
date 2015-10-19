@@ -140,16 +140,16 @@ def main(command):
         cards = trello.filter_cards(cards, lists)
         sortedCards = trello.sort_cards(cards, lists)
         print_oneliner(sortedCards, lists)
-    elif command == "usage":
-        print("Usage: ./trello2misc.py [stdout|todotxt|usage]?")
+    elif command == "help" or command == "usage":
+        print("Usage: ./trello2misc.py [stdout|todotxt|help]?")
     else:
         print("Unsupported command: " + command)
-        print("Usage: ./trello2misc.py [stdout|todotxt|usage]?")
+        print("Usage: ./trello2misc.py [stdout|todotxt|help]?")
 
 # The main program.
 if __name__ == '__main__':
     if (len(sys.argv) < 2):
-        command = "usage"
+        command = "help"
     else: 
         command = sys.argv[1].lower().strip()
     main(command)
